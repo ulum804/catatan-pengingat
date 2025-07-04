@@ -1,0 +1,91 @@
+body {
+      background: linear-gradient(to right, #35c2f1, #bfe4f9);
+      min-height: 100vh;
+    }
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 16px;
+    padding: 0;
+  }
+  nav ul {
+    flex-direction:row;
+    /* align-items: center; */
+  }
+}
+body {
+  font-size: 16px;
+}
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+}
+.fade-in {
+      animation: fadeInUp 0.5s ease-in;
+    }
+@keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+}
+.toast-container {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 9999;
+}
+.card-custom {
+      background-color: #ffffffbb;
+      backdrop-filter: blur(5px);
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+/* Gaya tambahan untuk baris yang lewat deadline */
+.baris-terlambat {
+  background-color: #ffe5e5 !important;
+  animation: kedipMerah 0.6s ease-in-out infinite alternate;
+}
+
+/* Animasi berkedip halus */
+@keyframes kedipMerah {
+  from {
+    background-color: #ffe5e5;
+  }
+  to {
+    background-color: #ffbbbb;
+  }
+}
+
+/* Ikon tambahan di teks judul */
+.ikon-terlambat::before {
+  content: "⚠️ ";
+}
+/* Animasi notifikasi toast */
+@keyframes fadeMasuk {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeKeluar {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+}
+
+.toast-animasi {
+  animation: fadeMasuk 1.4s ease forwards;
+}
+
+.toast-keluar {
+  animation: fadeKeluar 1.4s ease forwards;
+}
